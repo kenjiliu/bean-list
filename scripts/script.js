@@ -16,7 +16,7 @@ function render() {
                 </div>
                 <div class="price-footer">
                     <div class="price-item">原豆半磅 <b class="${c.bean ? '' : 'sold-out'}">${c.bean ? '$' + c.bean : '售完'}</b></div>
-                    <div class="price-item">濾掛10包 <b class="${c.drip ? '' : 'sold-out'}">${c.drip ? '$' + c.drip : '售完'}</b></div>
+                    <div class="price-item">濾掛(10包/盒) <b class="${c.drip ? '' : 'sold-out'}">${c.drip ? '$' + c.drip : '售完'}</b></div>
                 </div>
             </div>
         </div>
