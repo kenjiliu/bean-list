@@ -1,0 +1,221 @@
+:root {
+    --espresso-dark: #4d2f24;    /* Logo深可可色 */
+    --espresso-warm: #c19c81;    /* Logo暖沙色 */
+    --espresso-light: #fcfaf9;  
+    --espresso-subdark: #bd6f51;
+    --white: #ffffff;
+    --text-main: #3d2b24;        /* 主文字色 */
+    --border-light: #727272;
+    --sold-out: #afa9a5;
+    --new-bg: #c50303;
+}
+
+body {
+    font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background-color: var(--white);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+/* --- Header 修改為白色背景 --- */
+header {
+    text-align: center;
+    padding: 60px 20px 60px; /* 調整間距 */
+    background-color: var(--white);
+    color: var(--espresso-dark); /* 文字改為深色以在白底顯示 */
+}
+
+.logo-container {
+    width: 130px; 
+    height: 130px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.header-logo-text {
+    font-size: 2.8rem;
+    font-weight: bold;
+    letter-spacing: 8px;
+    margin: 0;
+    color: var(--espresso-dark);
+}
+
+.header-subtitle {
+    font-size: 1.1rem;
+    color: var(--espresso-warm); /* 副標維持暖沙色增加層次感 */
+    letter-spacing: 3px;
+    margin-top: 10px;
+}
+
+/* --- 新增：Header 與 Grid 間的粗線條 --- */
+.header-divider {
+    height: 4px; /* 線條粗細 */
+    background-color: var(--espresso-subdark); /* 線條顏色使用 Logo 深色 */
+    margin: 0 25px; /* 與左右邊界保持一點點距離，或設為 0 則全寬 */
+    border-radius: 3px;
+}
+
+/* 雙欄 Grid 配置 */
+.coffee-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 25px;
+    padding: 40px 25px;
+}
+
+.coffee-card {
+    background: var(--white);
+    display: flex;
+    align-items: stretch;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease, border-color 0.2s;
+}
+
+.coffee-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--espresso-warm);
+}
+
+.id-sidebar {
+    background-color: var(--espresso-warm);
+    color: var(--white);
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.content-body {
+    flex: 1;
+    padding: 22px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ...其餘 CSS (price-footer, footer 等) 保持不變... */
+
+.title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.coffee-name {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--espresso-dark);
+}
+
+.new-tag {
+    background: var(--new-bg);
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.flavor-notes {
+    font-size: 0.95rem;
+    color: var(--espresso-subdark);
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.tag-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.tag {
+    font-size: 0.85rem;
+    padding: 2px 6px;
+    border: 1px solid var(--espresso-warm);
+    color: var(--espresso-dark);
+    border-radius: 4px 3px;
+}
+
+/* 價格區底欄 */
+.price-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-light);
+    font-size: 0.9rem;
+}
+
+.price-item b {
+    color: var(--espresso-dark);
+    font-size: 1.15rem;
+    margin-left: 5px;
+}
+
+.sold-out {
+    color: var(--sold-out) !important;
+    text-decoration: line-through;
+}
+
+/* 更新日期與頁尾 */
+.update-date-footer {
+    text-align: right;
+    padding: 0 30px 30px;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+footer {
+    margin: 0 25px;
+    padding: 40px;
+    background-color: var(--white);
+    border-top: 4px solid var(--espresso-subdark);
+    border-radius: 0 0 15px 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.5fr;
+    gap: 40px;
+}
+
+.info-title {
+    color: var(--espresso-dark);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.info-p {
+    font-size: 0.88rem;
+    margin: 5px 0;
+    color: #666;
+}
+
+.info-p img {
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: contain;
+}
+
+@media (max-width: 900px) {
+    .coffee-grid { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; }
+}
