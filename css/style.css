@@ -1,7 +1,7 @@
 :root {
     --espresso-dark: #4d2f24;    /* Logo深可可色 */
     --espresso-warm: #c19c81;    /* Logo暖沙色 */
-    --espresso-light: #fcfaf9;  
+    --espresso-light: #fcefe9;  
     --espresso-subdark: #bd6f51;
     --white: #ffffff;
     --text-main: #3d2b24;        /* 主文字色 */
@@ -182,7 +182,7 @@ header {
     text-align: right;
     padding: 0 30px 30px;
     color: #999;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 footer {
@@ -215,7 +215,25 @@ footer {
     object-fit: contain;
 }
 
-@media (max-width: 900px) {
+
+.footer-bm {
+    margin: 0 25px;
+    padding: 40px;
+    background-color: var(--espresso-warm);
+    border-top: 4px solid var(--espresso-warm);
+    border-radius: 0 0 15px 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.footer-bm p {
+    font-size: 0.88rem;
+    margin: 5px 0;
+    color: var(--white);
+}
+
+@media (max-width: 800px) {
     .coffee-grid { grid-template-columns: 1fr; }
     footer { grid-template-columns: 1fr; }
 }
