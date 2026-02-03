@@ -231,7 +231,7 @@ header {
 .price-footer {
     display: flex;
     justify-content: space-between;
-    padding-top: 10px;
+    padding-top: 6px;
     border-top: 1px dashed var(--border-light);
     font-size: 0.85rem;
 }
@@ -323,7 +323,9 @@ footer {
 @media (max-width: 800px) {
     .coffee-grid { grid-template-columns: 1fr; }
     footer { grid-template-columns: 1fr; }
+    .price-footer { display: inline; justify-content:baseline; text-align: right;}
 }
+
 
 /* 列印 PDF 優化 (A4 一頁式) */
 @media print {
