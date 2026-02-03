@@ -22,10 +22,30 @@
         <div class="header-subtitle">Lius Coffee ‧ 喝一杯幸福的滋味</div>
     </header>
 
-    <div class="header-divider"></div>
+<div class="header-divider"></div>
 
-    <div class="coffee-grid" id="coffee-list">
-        </div>
+<div class="filter-container">
+    <div class="filter-group">
+        <button class="filter-btn active" data-type="all">全部</button>
+    </div>
+    <div class="filter-group">
+        <span class="filter-label">處理法：</span>
+        <button class="filter-btn" data-type="process" data-value="日曬">日曬</button>
+        <button class="filter-btn" data-type="process" data-value="水洗">水洗</button>
+        <button class="filter-btn" data-type="process" data-value="處理">蜜處理</button>
+    </div>
+    <div class="filter-group">
+        <span class="filter-label">焙度：</span>
+        <button class="filter-btn" data-type="roast" data-value="淺焙">淺焙</button>
+        <button class="filter-btn" data-type="roast" data-value="中淺焙">中淺焙</button>
+        <button class="filter-btn" data-type="roast" data-value="中焙">中焙</button>
+    </div>
+</div>
+
+<div id="filter-result-count" class="result-count"></div>
+
+<div class="coffee-grid" id="coffee-list"></div>
+
 
     <div class="update-date-footer">
         最後更新日期：2026.02.01

@@ -1,13 +1,20 @@
+/* ==========================================
+   1. 全域變數與重設 (Global Settings)
+   ========================================== */
 :root {
-    --espresso-dark: #4d2f24;    /* Logo深可可色 */
-    --espresso-warm: #c19c81;    /* Logo暖沙色 */
-    --espresso-light: #fcefe9;  
-    --espresso-subdark: #bd6f51;
+    --espresso-dark: #4d2f24;    /* Logo 深可可色 */
+    --espresso-warm: #c19c81;    /* Logo 暖沙色 */
+    --espresso-light: #fcefe9;   /* 淺色襯底 */
+    --espresso-subdark: #bd6f51; /* 副標題與線條色 */
     --white: #ffffff;
-    --text-main: #3d2b24;        /* 主文字色 */
-    --border-light: #727272;
-    --sold-out: #afa9a5;
-    --new-bg: #c50303;
+    --text-main: #3d2b24;        /* 主文字咖啡黑 */
+    --border-light: #727272;     /* 卡片邊框 */
+    --sold-out: #afa9a5;        /* 售完灰色 */
+    --new-bg: #c50303;           /* 新品紅標 */
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -16,6 +23,7 @@ body {
     color: var(--text-main);
     margin: 0;
     padding: 0;
+    line-height: 1.5;
 }
 
 .container {
@@ -24,12 +32,13 @@ body {
     padding-bottom: 60px;
 }
 
-/* --- Header 修改為白色背景 --- */
+/* ==========================================
+   2. 頁首區 (Header)
+   ========================================== */
 header {
     text-align: center;
-    padding: 60px 20px 60px; /* 調整間距 */
+    padding: 60px 20px 40px;
     background-color: var(--white);
-    color: var(--espresso-dark); /* 文字改為深色以在白底顯示 */
 }
 
 .logo-container {
@@ -57,25 +66,84 @@ header {
 
 .header-subtitle {
     font-size: 1.1rem;
-    color: var(--espresso-warm); /* 副標維持暖沙色增加層次感 */
+    color: var(--espresso-warm);
     letter-spacing: 3px;
     margin-top: 10px;
 }
 
-/* --- 新增：Header 與 Grid 間的粗線條 --- */
+/* 分隔粗線條 */
 .header-divider {
-    height: 4px; /* 線條粗細 */
-    background-color: var(--espresso-subdark); /* 線條顏色使用 Logo 深色 */
-    margin: 0 25px; /* 與左右邊界保持一點點距離，或設為 0 則全寬 */
+    height: 4px;
+    background-color: var(--espresso-subdark);
+    margin: 0 25px;
     border-radius: 3px;
 }
 
-/* 雙欄 Grid 配置 */
+/* ==========================================
+   3. 篩選控制區 (Filter & Results)
+   ========================================== */
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 25px 0;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--espresso-light);
+    padding: 5px 12px;
+    border-radius: 50px;
+}
+
+.filter-label {
+    font-size: 0.85rem;
+    color: var(--espresso-subdark);
+    font-weight: bold;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid transparent;
+    color: var(--text-main);
+    padding: 4px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    color: var(--espresso-warm);
+}
+
+.filter-btn.active {
+    background-color: var(--espresso-warm);
+    color: var(--white);
+    border-color: var(--espresso-warm);
+}
+
+/* 篩選結果數量統計 */
+.result-count {
+    display: none; /* 預設隱藏，由 JS 控制顯示 */
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--espresso-subdark);
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* ==========================================
+   4. 豆單網格區 (Coffee Grid & Cards)
+   ========================================== */
 .coffee-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr; /* 每排兩個品項 */
     gap: 25px;
-    padding: 40px 25px;
+    padding: 30px 25px;
 }
 
 .coffee-card {
@@ -86,7 +154,8 @@ header {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    transition: transform 0.2s ease, border-color 0.2s;
+    transition: transform 0.2s ease;
+    break-inside: avoid; /* 避免列印時卡片被截斷 */
 }
 
 .coffee-card:hover {
@@ -94,26 +163,25 @@ header {
     border-color: var(--espresso-warm);
 }
 
+/* 左側編號側欄 */
 .id-sidebar {
     background-color: var(--espresso-warm);
     color: var(--white);
-    width: 50px;
+    width: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 800;
     flex-shrink: 0;
 }
 
 .content-body {
     flex: 1;
-    padding: 22px 25px;
+    padding: 20px 25px;
     display: flex;
     flex-direction: column;
 }
-
-/* ...其餘 CSS (price-footer, footer 等) 保持不變... */
 
 .title-row {
     display: flex;
@@ -124,10 +192,11 @@ header {
 
 .coffee-name {
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--espresso-dark);
 }
 
+/* 新品標籤 */
 .new-tag {
     background: var(--new-bg);
     color: white;
@@ -137,39 +206,40 @@ header {
 }
 
 .flavor-notes {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--espresso-subdark);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     flex-grow: 1;
 }
 
+/* 處理法與焙度小標籤 */
 .tag-group {
     display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 8px;
+    margin-bottom: 12px;
 }
 
 .tag {
-    font-size: 0.85rem;
-    padding: 2px 6px;
+    font-size: 0.8rem;
+    padding: 1px 8px;
     border: 1px solid var(--espresso-warm);
     color: var(--espresso-dark);
-    border-radius: 4px 3px;
+    border-radius: 4px;
 }
 
-/* 價格區底欄 */
+/* 價格顯示區 */
 .price-footer {
     display: flex;
     justify-content: space-between;
-    padding-top: 12px;
+    padding-top: 10px;
     border-top: 1px dashed var(--border-light);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .price-item b {
     color: var(--espresso-dark);
-    font-size: 1.15rem;
-    margin-left: 5px;
+    font-size: 1.1rem;
+    margin-left: 4px;
 }
 
 .sold-out {
@@ -177,30 +247,32 @@ header {
     text-decoration: line-through;
 }
 
-/* 更新日期與頁尾 */
+/* 最後更新日期文字 */
 .update-date-footer {
     text-align: right;
-    padding: 0 30px 30px;
+    padding: 0 30px 20px;
     color: #999;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
+/* ==========================================
+   5. 頁尾資訊 (Footer)
+   ========================================== */
 footer {
     margin: 0 25px;
     padding: 40px;
     background-color: var(--white);
     border-top: 4px solid var(--espresso-subdark);
-    border-radius: 0 0 15px 15px;
     display: grid;
-    grid-template-columns: 1fr 1fr 0.5fr;
-    gap: 40px;
+    grid-template-columns: 1fr 1fr 0.6fr;
+    gap: 30px;
 }
 
 .info-title {
     color: var(--espresso-dark);
     font-weight: bold;
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .info-p {
@@ -210,30 +282,72 @@ footer {
 }
 
 .info-p img {
-    max-width: 50%;
-    max-height: 50%;
-    object-fit: contain;
+    max-width: 120px; /* 限制 QR Code 寬度 */
+    height: auto;
+    margin-top: 5px;
 }
 
+/* 賣貨便按鈕樣式 */
+.button {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #FF6000; /* 7-11 橘色 */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 8px;
+}
 
+/* 最底層咖啡品牌標語 */
 .footer-bm {
     margin: 0 25px;
-    padding: 40px;
+    padding: 20px;
     background-color: var(--espresso-warm);
-    border-top: 4px solid var(--espresso-warm);
     border-radius: 0 0 15px 15px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
 }
 
 .footer-bm p {
-    font-size: 0.88rem;
-    margin: 5px 0;
+    font-size: 0.85rem;
+    margin: 0;
+    text-align: center;
     color: var(--white);
+    letter-spacing: 1px;
 }
 
+/* ==========================================
+   6. 響應式與列印優化 (RWD & Print)
+   ========================================== */
+
+/* 手機版適應 (寬度小於 800px) */
 @media (max-width: 800px) {
     .coffee-grid { grid-template-columns: 1fr; }
     footer { grid-template-columns: 1fr; }
+}
+
+/* 列印 PDF 優化 (A4 一頁式) */
+@media print {
+    /* 隱藏網頁互動元件 */
+    .filter-container, .result-count, .button {
+        display: none !important;
+    }
+    
+    .container { width: 100%; margin: 0; }
+    
+    header { padding: 30px 20px 20px; }
+    .header-logo-text { font-size: 2.2rem; }
+    .logo-container { width: 100px; height: 100px; }
+
+    .coffee-grid { 
+        padding: 20px; 
+        gap: 15px; /* 列印時縮小間距以節省空間 */
+    }
+
+    footer { 
+        padding: 20px; 
+        grid-template-columns: 1fr 1fr 1fr; /* 強制頁尾列印時保持並排 */
+    }
+
+    /* 確保顏色正確輸出 */
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
