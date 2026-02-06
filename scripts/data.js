@@ -5,7 +5,7 @@ const coffees = [
     { id: 3, name: "格拉諾德 - 瓜地馬拉 薇薇特南果 格拉諾德", process: "水洗", roast: "中焙", note: "柑橘 橘子 奶油 堅果 蘋果甜感", bean: 280, drip: 250, new: false },
     { id: 4, name: "吉查羅利 PB - 肯亞 恩布 吉查羅利", process: "水洗", roast: "中淺焙", note: "紅莓 柑橙 水果汁 香草 奶油", bean: 330, drip: 300, new: false },
     { id: 5, name: "馬拉威 藝妓 - 馬拉威 秘蘇庫 藝妓", process: "水洗", roast: "中淺焙", note: "花香 甜桃 水梨 蜜柚 口感優雅滑順", bean: 330, drip: 300, new: false },
-    { id: 6, name: "安娜索拉 - 衣索比亞 谷吉 安娜索拉 G1", process: "水洗", roast: "中淺焙", note: "檸檬 花香 桃子 黑糖 尾韻厚實", bean: null, drip: 300, new: false },
+    { id: 6, name: "安娜索拉 - 衣索比亞 谷吉 安娜索拉 G1", process: "水洗", roast: "中淺焙", note: "檸檬 花香 桃子 黑糖 尾韻厚實", bean: null, drip: null, new: false },
     { id: 7, name: "香水茉莉 - 衣索比亞 谷吉 烏拉嘎 G1", process: "水洗", roast: "中淺焙", note: "茉莉花 香水檸檬 佛手柑 白桃", bean: 330, drip: 300, new: false },
     { id: 8, name: "芭蕾 - 衣索比亞 西達馬 柏娜 蘇莉亞 G1", process: "日曬", roast: "中淺焙", note: "草莓 水蜜桃 佛手柑 芒果乾", bean: 330, drip: 300, new: false },
     { id: 9, name: "卡拉莫- 衣索比亞 西達馬 卡拉莫 74158 G1", process: "日曬", roast: "淺焙", note: "草莓 藍莓果醬 葡萄 佛手柑", bean: 350, drip: 320, new: false },
