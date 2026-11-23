@@ -1,0 +1,8 @@
+{ id: 10, name: "風信子 - 衣索比亞 谷吉 烏拉嘎 風信子 G1", process: "水洗", roast: "淺焙", note: "檸檬皮 柑橘 梅子 白花 奶油 茶感 酸質平衡 風味明亮", bean: 350, drip: 320, new: true },
+{ id: 5, name: "卡菲婭 藝妓 - 衣索比亞 卡法 卡菲婭 藝妓 G1", process: "水洗", roast: "淺焙", note: "檸檬 白柚 花茶香 東方美人茶 紅糖 蜜糖 酸質細緻 口感明亮", bean: 380, drip: 350, new: true },
+{ id: 6, name: "龐貝 日曬 - 衣索比亞 西達馬 班莎 龐貝 日曬 G1", process: "日曬", roast: "淺焙", note: "檸檬 丁香 棕色香料 雪松 烏龍茶 層次豐富紮實", bean: 380, drip: 350, new: true },
+{ id: 7, name: "露娜 藝伎 - 衣索比亞 卡法 露娜 藝伎 G1", process: "水洗", roast: "淺焙", note: "野薑花香 柑橘 黃檸檬 佛手柑 覆盆子 百花蜜甜感", bean: 380, drip: 350, new: true },
+{ id: 8, name: "露娜 藝伎 日曬 - 衣索比亞 卡法 露娜 藝伎 日曬 G1", process: "日曬", roast: "淺焙", note: "芒果乾 白桃 葡萄乾 野莓 茉莉花 蜂蜜 柑橘 白糖甜感", bean: 380, drip: 350, new: true },
+{ id: 10, name: "姬格薩 日曬 - 衣索比亞 谷吉 姬格薩處理廠 日曬 G1", process: "日曬", roast: "淺焙", note: "莓果 甜漬檸檬 柳橙 紅糖 烏龍茶 果汁口感 風味飽滿圓潤", bean: 380, drip: 350, new: true },
+{ id: 10, name: "加古悠 AA TOP - 肯亞 麒麟雅加 加古悠處理廠 AA TOP", process: "水洗", roast: "淺焙", note: "烏梅 柑橘 番茄 蜜餞 烏龍茶 酸質飽滿", bean: 350, drip: 320, new: true },
+
